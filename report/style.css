@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.labs {
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.lab-report {
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.place-for-info {
+    background-color: #f2f2f2;
+    padding: 20px;
+    grid-column: span 2;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    background-color: #e6e6e6;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.current-lab {
+    background: #96D4D4;
+}
