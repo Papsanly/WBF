@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+main {
+  flex: 1;
+  max-width: 900px;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-around;
+}
+
+input, textarea, button {
+  height: 40px;
+  padding: 8px;
+  font-size: 0.875rem;
+  border-radius: 0.375rem;
+  border: 1px solid #e5e7eb;
+}
+
+textarea {
+  height: 60px;
+  resize: vertical;
+}
+
+button {
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #6366f1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+}
+
+button:hover {
+  background-color: #4f46e5;
+}
+
+input:focus, textarea:focus, button:focus {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+header, footer {
+  width: 100%;
+  background-color: #f3f4f6;
+  padding: 16px 0;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+footer p {
+  color: #6b7280;
+}
+
+.report-lost-item, .lost-and-found {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+li {
+  list-style: none;
+}
+
+.search-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+#search {
+  flex: 1;
+}
+
+label[for="search"] {
+  color: #6b7280;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.item {
+  background: #f3f4f6;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.item a {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+}
+
+th, td {
+  padding: 8px 16px;
+  text-align: left;
+  border-bottom: 1px solid #eaeaea;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+.item img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.report-lost-item > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
