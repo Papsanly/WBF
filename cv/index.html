@@ -3,17 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <title>Resume</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-<div>
-  <div>
-    <img src="img/me.jpg" alt="Me"/>
+<div class="col-1">
+  <img src="img/me.jpg" alt="Me"/>
+  <div class="col-1-inner">
     <div>
       <h2>Contacts</h2>
       <p>
-        <span>C: </span>
+        <span class="font-bold">C: </span>
         <span>+380 123 456 789</span><br>
-        <span>E: </span>
+        <span class="font-bold">E: </span>
         <a href="mailto:andriy.lysenko.dev@gmail.com" target="_blank" rel="noopener noreferrer">
           andriy.lysenko.dev@gmail.com
         </a>
@@ -42,9 +46,9 @@
     </div>
   </div>
 </div>
-<div>
+<div class="col-2">
   <div>
-    <p>Front-End Developer</p>
+    <p class="font-bold">Front-End Developer</p>
     <h1>Андрій Лисенко</h1>
     <p>
       Працюю над створенням інтуїтивно зрозумілих та високопродуктивних веб-інтерфейсів з використанням сучасних
@@ -52,46 +56,44 @@
     </p>
   </div>
   <div>
-    <div>
-      <h2>Projects</h2>
-      <ol>
-        <li>
-          <a href="https://github.com/Papsanly" target="_blank" rel="noopener noreferrer">
-            https://github.com/Papsanly
-          </a>
-        </li>
-      </ol>
-    </div>
-    <div>
-      <h2>Work Experience</h2>
-      <p>Стажування Generalist Розробника aviasim.com.ua</p>
-      <p>
-        <span>September 2023 — up to now</span>
-        <span>|</span>
-        <span>Kyiv</span>
-      </p>
-      <ol>
-        <li>
-          Розробка і оптимізація користувацьких інтерфейсів.
-        </li>
-        <li>
-          Робота з дизайнерами для реалізації відповідності дизайну та функціональності продуктів.
-        </li>
-        <li>
-          Розробка системи обробки замовлень та бронювань
-        </li>
-      </ol>
-    </div>
-    <div>
-      <h2>Education</h2>
-      <p>National Technical University – «Kyiv Polytechnic Institute»</p>
-      <p>Software engineer</p>
-      <p>
-        <span>September 2021 — up to now</span>
-        <span>|</span>
-        <span>Kyiv</span>
-      </p>
-    </div>
+    <h2>Projects</h2>
+    <ol>
+      <li>
+        <a href="https://github.com/Papsanly" target="_blank" rel="noopener noreferrer">
+          https://github.com/Papsanly
+        </a>
+      </li>
+    </ol>
+  </div>
+  <div>
+    <h2>Work Experience</h2>
+    <p class="font-bold">Стажування Generalist Розробника <span class="font-blue">aviasim.com.ua</span></p>
+    <p>
+      <span class="font-muted">September 2023 — up to now</span>
+      <span>|</span>
+      <span class="font-muted">Kyiv</span>
+    </p>
+    <ol>
+      <li>
+        Розробка і оптимізація користувацьких інтерфейсів.
+      </li>
+      <li>
+        Робота з дизайнерами для реалізації відповідності дизайну та функціональності продуктів.
+      </li>
+      <li>
+        Розробка системи обробки замовлень та бронювань
+      </li>
+    </ol>
+  </div>
+  <div>
+    <h2>Education</h2>
+    <p class="font-bold font-blue">National Technical University – «Kyiv Polytechnic Institute»</p>
+    <p class="font-bold">Software engineer</p>
+    <p>
+      <span class="font-muted">September 2021 — up to now</span>
+      <span>|</span>
+      <span class="font-muted">Kyiv</span>
+    </p>
   </div>
 </div>
 </body>
