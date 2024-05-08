@@ -1,47 +1,53 @@
 body {
-    font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 header {
-    text-align: center;
-    padding: 20px;
+  text-align: center;
+  padding: 20px;
 }
 
 main {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 20px;
-    padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  padding: 20px;
 }
 
 .lab-report {
-    background-color: #f2f2f2;
-    padding-inline: 20px;
+  background-color: #f2f2f2;
+  padding-inline: 20px;
 }
 
 .place-for-info {
-    background-color: #f2f2f2;
-    padding: 20px;
-    grid-column: span 2;
+  background-color: #f2f2f2;
+  padding: 20px;
+  grid-column: span 2;
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding-left: 20px;
+ul.lab-list {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 20px;
 }
 
-ul ul li {
-    background-color: #dcdcdc;
+ul.lab-list li {
+  background-color: #e6e6e6;
+  padding-inline: 15px;
+  padding-block: 10px;
 }
 
-ul li {
-    background-color: #e6e6e6;
-    margin-bottom: 10px;
-    padding-inline: 15px;
-    padding-block: 1px;
+.lab-list a {
+  text-decoration: none;
+  color: black;
 }
 
-.current-lab {
-    background: #96D4D4;
+ul li.current-lab {
+  background-color: #96D4D4;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+  border: 2px solid black;
 }
