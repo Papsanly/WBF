@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Лабораторні Роботи</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1 style="font-size: 1.25rem">
+    ЗВІТ З ЛАБОРАТОРНИХ РОБІТ <br>
+    з дисципліни "WEB-ОРІЄНТОВАНІ ТЕХНОЛОГІЇ. ОСНОВИ FRONTEND та BACKEND РОЗРОБКИ" <br>
+    Студент групи ІП-11 <br>
+    Лисенко Андрій Юрійович
+  </h1>
+</header>
+
+<main>
+  <div style="grid-column: span 2">
+    <ul style="display: flex" class="lab-list">
+      <li>
+        <a href="../lab1/1.html">
+          Лабораторна робота 1
+        </a>
+      </li>
+      <li>
+        <a href="../lab2/1.html">
+          Лабораторна робота 2
+        </a>
+      </li>
+      <li class="current-lab">
+        <a href="../lab3/1.html">
+          Лабораторна робота 3
+        </a>
+      </li>
+      <li>
+        <a href="../lab4/1.html">
+          Лабораторна робота 4
+        </a>
+      </li>
+      <li>
+        <a href="../lab5.0/1.html">
+          Лабораторна робота 5.0
+        </a>
+      </li>
+      <li>
+        <a href="../lab5.1/1.html">
+          Лабораторна робота 5.1
+        </a>
+      </li>
+      <li>
+        <a href="../lab6/1.html">
+          Лабораторна робота 6
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <ul class="lab-list">
+      <li>
+        <a href="1.html">
+          Тема, мета, Місце розташування лабораторної роботи №3
+        </a>
+      </li>
+      <li class="current-lab">
+        <a href="2.html">
+          Завдання 1<br>Зовнішній вигляд макету. Код макету.
+        </a>
+      </li>
+      <li>
+        <a href="3.html">
+          Завдання 2<br>Фіксована таблична верстка
+        </a>
+      </li>
+      <li>
+        <a href="4.html">
+          Завдання 2<br>Гумова таблична верстка
+        </a>
+      </li>
+      <li>
+        <a href="5.html">
+          Завдання 2<br>Фіксована блокова верстка
+        </a>
+      </li>
+      <li>
+        <a href="6.html">
+          Завдання 2<br>Гумова блокова верстка
+        </a>
+      </li>
+      <li>
+        <a href="7.html">
+          Завдання 3<br>Зовнішній вигляд сторінки
+        </a>
+      </li>
+      <li>
+        <a href="8.html">
+          Завдання 3<br>HTML-код
+        </a>
+      </li>
+      <li>
+        <a href="9.html">
+          Завдання 3<br>CSS-код
+        </a>
+      </li>
+      <li>
+        <a href="10.html">
+          Висновки
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="lab-report">
+    <p>Зовнішній вигляд макету</p>
+    <img alt="img" src="img.png"/>
+    <p>HTML-код макету</p>
+    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Lost &amp; Found&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;header&gt;&lt;h1&gt;Lost &amp; Found Items&lt;/h1&gt;&lt;/header&gt;
+&lt;main&gt;
+  &lt;section class=&quot;lost-and-found&quot;&gt;
+    &lt;h2&gt;Lost &amp; Found&lt;/h2&gt;
+    &lt;label for=&quot;search&quot;&gt;Enter keywords to search for lost items&lt;/label&gt;
+    &lt;div class=&quot;search-container&quot;&gt;
+      &lt;input
+        id=&quot;search&quot;
+        placeholder=&quot;Enter keywords&quot;
+      /&gt;
+      &lt;button&gt;
+        Search
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;ul class=&quot;items&quot;&gt;
+      &lt;li class=&quot;item&quot;&gt;
+        &lt;a href=&quot;/item/1&quot;&gt;
+          &lt;h3&gt;MacBook Pro 2021&lt;/h3&gt;
+          &lt;table&gt;
+            &lt;tr&gt;
+              &lt;th&gt;Description&lt;/th&gt;
+              &lt;td&gt;Space gray, 1TB SSD, 16GB RAM&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;th&gt;Location found&lt;/th&gt;
+              &lt;td&gt;Library&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;th&gt;Date found&lt;/th&gt;
+              &lt;td&gt;2023-08-16&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/table&gt;
+          &lt;img
+            alt=&quot;Item Image&quot;
+            src=&quot;img/placeholder.svg&quot;
+            width=&quot;200&quot;
+          /&gt;
+        &lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class=&quot;item&quot;&gt;
+        &lt;a href=&quot;/item/2&quot;&gt;
+          &lt;h3&gt;iPhone 13&lt;/h3&gt;
+          &lt;table&gt;
+            &lt;tr&gt;
+              &lt;th&gt;Description&lt;/th&gt;
+              &lt;td&gt;Blue, 128GB, pristine condition&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;th&gt;Location found&lt;/th&gt;
+              &lt;td&gt;Cafeteria&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;th&gt;Date found&lt;/th&gt;
+              &lt;td&gt;2023-08-15&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/table&gt;
+          &lt;img
+            alt=&quot;Item Image&quot;
+            width=&quot;200&quot;
+            src=&quot;img/placeholder.svg&quot;
+          /&gt;
+        &lt;/a&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/section&gt;
+  &lt;section class=&quot;report-lost-item&quot;&gt;
+    &lt;h2&gt;Report a lost item&lt;/h2&gt;
+    &lt;div&gt;
+      &lt;p&gt;
+        Enter the details of the lost item below. If someone has found it, they can contact you using the
+        information you provide.
+      &lt;/p&gt;
+      &lt;form&gt;
+        &lt;div&gt;
+          &lt;label for=&quot;item-name&quot;&gt;
+            Item name
+          &lt;/label&gt;
+          &lt;input
+            id=&quot;item-name&quot;
+            placeholder=&quot;Enter item name&quot;
+            required
+          /&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+          &lt;label for=&quot;location-found&quot;&gt;
+            Location found
+          &lt;/label&gt;
+          &lt;input
+            id=&quot;location-found&quot;
+            placeholder=&quot;Location where you found it&quot;
+            required
+          /&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+          &lt;label for=&quot;description&quot;&gt;
+            Description
+          &lt;/label&gt;
+          &lt;textarea
+            id=&quot;description&quot;
+            placeholder=&quot;Enter description&quot;
+            required
+          &gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+          &lt;label for=&quot;contact-info&quot;&gt;
+            Contact information
+          &lt;/label&gt;
+          &lt;input
+            id=&quot;contact-info&quot;
+            placeholder=&quot;Enter contact information&quot;
+            required
+          /&gt;
+        &lt;/div&gt;
+        &lt;button type=&quot;submit&quot;&gt;
+          Report lost item
+        &lt;/button&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer&gt;
+  &lt;p&gt;&lt;small&gt;&copy; 2024 Lost and Found Inc. All rights reserved.&lt;/small&gt;&lt;/p&gt;
+&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+  </div>
+
+</main>
+</body>
+</html>

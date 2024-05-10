@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Лабораторні Роботи</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    /* Container styling */
+    .lab-report .container {
+      width: 600px;
+      height: 400px;
+      border: 2px solid black;
+    }
+
+    /* Common styles for all blocks for centering text */
+    .lab-report .block {
+      display: flex;
+      align-items: center; /* Vertical alignment */
+      justify-content: center; /* Horizontal alignment */
+    }
+
+    /* Yellow block on the left */
+    .lab-report #block2 {
+      float: left;
+      width: 30%;
+      height: 100%;
+      background-color: yellow;
+    }
+
+    /* White block on the top right */
+    .lab-report #block1 {
+      width: 100%;
+      height: 15%;
+      background-color: blue;
+    }
+
+    /* Blue block on the bottom right */
+    .lab-report #block3 {
+      width: 100%;
+      height: 15%;
+      background-color: blue;
+    }
+
+    /* Inner block within the white block, optional styling */
+    .lab-report #block4 {
+      width: 100%;
+      height: 70%;
+    }
+
+    .lab-report .float-right {
+      float: right;
+      margin-right: 10%;
+      width: 50%;
+      height: 100%;
+      border: 2px solid black;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1 style="font-size: 1.25rem">
+    ЗВІТ З ЛАБОРАТОРНИХ РОБІТ <br>
+    з дисципліни "WEB-ОРІЄНТОВАНІ ТЕХНОЛОГІЇ. ОСНОВИ FRONTEND та BACKEND РОЗРОБКИ" <br>
+    Студент групи ІП-11 <br>
+    Лисенко Андрій Юрійович
+  </h1>
+</header>
+
+<main>
+  <div style="grid-column: span 2">
+    <ul style="display: flex" class="lab-list">
+      <li>
+        <a href="../lab1/1.html">
+          Лабораторна робота 1
+        </a>
+      </li>
+      <li>
+        <a href="../lab2/1.html">
+          Лабораторна робота 2
+        </a>
+      </li>
+      <li class="current-lab">
+        <a href="../lab3/1.html">
+          Лабораторна робота 3
+        </a>
+      </li>
+      <li>
+        <a href="../lab4/1.html">
+          Лабораторна робота 4
+        </a>
+      </li>
+      <li>
+        <a href="../lab5.0/1.html">
+          Лабораторна робота 5.0
+        </a>
+      </li>
+      <li>
+        <a href="../lab5.1/1.html">
+          Лабораторна робота 5.1
+        </a>
+      </li>
+      <li>
+        <a href="../lab6/1.html">
+          Лабораторна робота 6
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <ul class="lab-list">
+      <li>
+        <a href="1.html">
+          Тема, мета, Місце розташування лабораторної роботи №3
+        </a>
+      </li>
+      <li>
+        <a href="2.html">
+          Завдання 1<br>Зовнішній вигляд макету. Код макету.
+        </a>
+      </li>
+      <li class="current-lab">
+        <a href="3.html">
+          Завдання 2<br>Фіксована таблична верстка
+        </a>
+      </li>
+      <li>
+        <a href="4.html">
+          Завдання 2<br>Гумова таблична верстка
+        </a>
+      </li>
+      <li>
+        <a href="5.html">
+          Завдання 2<br>Фіксована блокова верстка
+        </a>
+      </li>
+      <li>
+        <a href="6.html">
+          Завдання 2<br>Гумова блокова верстка
+        </a>
+      </li>
+      <li>
+        <a href="7.html">
+          Завдання 3<br>Зовнішній вигляд сторінки
+        </a>
+      </li>
+      <li>
+        <a href="8.html">
+          Завдання 3<br>HTML-код
+        </a>
+      </li>
+      <li>
+        <a href="9.html">
+          Завдання 3<br>CSS-код
+        </a>
+      </li>
+      <li>
+        <a href="10.html">
+          Висновки
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="lab-report">
+    <div class="container">
+      <div id="block2" class="block">2</div>
+      <div class="float-right">
+        <div id="block1" class="block"><span style="color: white">1</span></div>
+        <div id="block4" class="block">4</div>
+        <div id="block3" class="block"><span style="color: white">3</span></div>
+      </div>
+    </div>
+  </div>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Lab3 Variant 9</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .flex-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .flex-row {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .text-line-through {
+      text-decoration: line-through;
+    }
+
+    .color-blue {
+      color: #54a4d9;
+    }
+
+    .color-red {
+      color: red;
+    }
+
+    .color-green {
+      color: #51b651;
+    }
+
+    .color-yellow {
+      color: #de8e10;
+    }
+
+    .text-sm {
+      font-size: small;
+    }
+
+    .text-lg {
+      font-size: x-large;
+    }
+
+    .align-super {
+      vertical-align: super
+    }
+
+    .gap-md {
+      gap: 1rem;
+    }
+
+    .gap-lg {
+      gap: 4rem;
+    }
+
+    .items-center {
+      align-items: center;
+    }
+
+    .justify-between {
+      justify-content: space-between;
+    }
+
+    .text-bold {
+      font-weight: bold;
+    }
+
+    img {
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    button {
+      border: none;
+      color: white;
+      background: red;
+      height: 45px;
+    }
+
+    .items-start {
+      align-items: start;
+    }
+
+    .w-full {
+      width: 100%;
+    }
+
+    .color-gray {
+      color: gray;
+    }
+
+    .border-bottom {
+      border-bottom: 1px solid lightgray;
+    }
+
+    .pb-md {
+      padding-bottom: 1.25rem;
+    }
+
+    .text-underline {
+      text-decoration: underline;
+    }
+
+    .gap-sm {
+      gap: 0.5rem;
+    }
+
+    .gap-xsm {
+      gap: 0.2rem;
+    }
+
+    .bg-white {
+      background: white;
+    }
+
+    .absolute {
+      position: absolute;
+    }
+
+    .relative {
+      position: relative;
+    }
+
+    .top-0 {
+      top: 0
+    }
+
+    .right-0 {
+      right: 0;
+    }
+
+    .rows-3 {
+      grid-template-rows: repeat(3, 10px);
+    }
+
+    .cols-2 {
+      grid-template-columns: repeat(2, 40px);
+    }
+
+    .grid {
+      display: grid;
+      padding: 5px;
+      box-shadow: 0 0 2px 2px rgba(128, 128, 128, 0.22) inset;
+    }
+
+    .text-xsm {
+      font-size: x-small;
+    }
+  </style>
+</head>
+<body>
+<div class="flex-col items-center justify-between gap-lg" style="max-width: 900px">
+  <div class="flex-row gap-lg">
+    <div>
+      <img src="img_1.png" alt="img_1">
+    </div>
+    <div class="flex-col gap-md">
+      <h1 class="text-lg">
+        HTML і CSS Професійний курс частина 1
+      </h1>
+      <p>
+        <span class="text-line-through color-blue align-super">1,190 грн</span>
+        <span class="color-red text-lg">390 грн</span>
+      </p>
+      <div class="flex-row items-center gap-md">
+        <img alt="img_6" src="img_6.png" style="width: 23px; height: 23px">
+        <p class="color-green">Ви економете: <span class="text-bold">800 грн (67%)</span></p>
+      </div>
+      <div class="flex-row items-center gap-md">
+        <img alt="img_7" src="img_7.png" style="width: 23px; height: 23px">
+        <p class="color-yellow">Покваптеся! Закінчується через 1 день 12 часов 03 мин 38 сек</p>
+      </div>
+      <p>
+        Відео запис курсу HTML і CSS. На цьому курсі ви навчитеся робити справжні проекти, такі ж за рівнем складності,
+        як в індустрії. І будете робити їх
+        правильно, щоб після навчання видавати результат високого рівня, за який компанії готові платити.
+      </p>
+      <button class="text-lg">
+        Купити →
+      </button>
+      <div class="flex-col gap-md items-start" style="align-self: center">
+        <div class="flex-row items-center gap-md">
+          <img alt="img_8" src="img_8.png" style="width: 41px; height: 41px">
+          <p>Безпечні платежі</p>
+        </div>
+        <div class="flex-row items-center gap-md">
+          <img alt="img_9" src="img_9.png" style="width: 41px; height: 41px">
+          <p>Захист персональних даних</p>
+        </div>
+        <div class="flex-row items-center gap-md">
+          <img alt="img_10" src="img_10.png" style="width: 41px; height: 41px">
+          <p>100% унікальні матеріали</p>
+        </div>
+        <div class="flex-row items-center gap-md">
+          <img alt="img_11" src="img_11.png" style="width: 41px; height: 41px">
+          <p>Гарантія кращої якості</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flex-col gap-md w-full">
+    <p class="w-full text-bold">Похожие товары</p>
+    <div class="flex-row gap-md border-bottom pb-md justify-between">
+      <div class="flex-col gap-md" style="max-width: 200px">
+        <div class="relative">
+          <img alt="img_2" src="img_2.png" style="width: 200px; height: 250px">
+          <div class="absolute top-0 right-0">
+            <div class="text-xsm" style="background: red; color: white; padding: 5px; text-align: center">Акция!</div>
+            <div style="align-items: end; justify-items: end"
+                 class="grid rows-3 cols-2 gap-xsm bg-white text-xsm">
+              <div class="text-bold" style="grid-row: span 2; font-size: large">
+                67
+              </div>
+              <div>%</div>
+              <div class="text-bold">Минус</div>
+              <div style="grid-column: span 2">Экономия 800 грн</div>
+            </div>
+          </div>
+        </div>
+        <p class="color-gray text-sm">Linux с нуля - видеокурс</p>
+        <p class="text-sm">
+          <span class="text-line-through">1,190 грн</span>
+          <span class="color-blue">390 грн</span>
+        </p>
+      </div>
+      <div class="flex-col gap-md" style="max-width: 200px">
+        <div class="relative">
+          <img alt="img_3" src="img_3.png" style="width: 200px; height: 250px">
+          <div class="absolute top-0 right-0">
+            <div class="text-xsm" style="background: red; color: white; padding: 5px; text-align: center">Акция!</div>
+            <div style="align-items: end; justify-items: end"
+                 class="grid rows-3 cols-2 gap-xsm bg-white text-xsm">
+              <div class="text-bold" style="grid-row: span 2; font-size: large">
+                63
+              </div>
+              <div>%</div>
+              <div class="text-bold">Минус</div>
+              <div style="grid-column: span 2">Экономия 500 грн</div>
+            </div>
+          </div>
+        </div>
+        <p class="color-gray text-sm">Удаленное администрирование серверов Windows</p>
+        <p class="text-sm">
+          <span class="text-line-through">790 грн</span>
+          <span class="color-blue">290 грн</span>
+        </p>
+      </div>
+      <div class="flex-col gap-md" style="max-width: 200px">
+        <div class="relative">
+          <img alt="img_4" src="img_4.png" style="width: 200px; height: 250px">
+          <div class="absolute top-0 right-0">
+            <div class="text-xsm" style="background: red; color: white; padding: 5px; text-align: center">Акция!</div>
+            <div style="align-items: end; justify-items: end"
+                 class="grid rows-3 cols-2 gap-xsm bg-white text-xsm">
+              <div class="text-bold" style="grid-row: span 2; font-size: large">
+                67
+              </div>
+              <div>%</div>
+              <div class="text-bold">Минус</div>
+              <div style="grid-column: span 2">Экономия 800 грн</div>
+            </div>
+          </div>
+        </div>
+        <p class="color-gray text-sm">Курс Angular 8</p>
+        <p class="text-sm">
+          <span class="text-line-through">1,190 грн</span>
+          <span class="color-blue">390 грн</span>
+        </p>
+      </div>
+      <div class="flex-col gap-md" style="max-width: 200px">
+        <div class="relative">
+          <img alt="img_5" src="img_5.png" style="width: 200px; height: 250px">
+          <div class="absolute top-0 right-0">
+            <div class="text-xsm" style="background: red; color: white; padding: 5px; text-align: center">Акция!</div>
+            <div style="align-items: end; justify-items: end"
+                 class="grid rows-3 cols-2 gap-xsm bg-white text-xsm">
+              <div class="text-bold" style="grid-row: span 2; font-size: large">
+                51
+              </div>
+              <div>%</div>
+              <div class="text-bold">Минус</div>
+              <div style="grid-column: span 2">Экономия 400 грн</div>
+            </div>
+          </div>
+        </div>
+        <p class="color-gray text-sm">Видео курс системного администратора</p>
+        <p class="text-sm">
+          <span class="text-underline">Купить</span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="flex-row gap-md w-full justify-between text-sm">
+    <div class="flex-col gap-md w-full">
+      <p class="border-bottom pb-md">
+        Допомога
+      </p>
+      <div class="flex-col gap-sm color-gray">
+        <p>Довідка</p>
+        <p>конфіденційність</p>
+        <p>Умови використання</p>
+      </div>
+    </div>
+    <div class="flex-col gap-md w-full">
+      <p class="border-bottom pb-md">
+        Зв'язатися з нами
+      </p>
+      <div class="flex-col gap-sm color-gray">
+        <img alt="img_16" src="img_16.png" style="width: 40px">
+      </div>
+    </div>
+    <div class="flex-col gap-md w-full">
+      <p class="border-bottom pb-md">
+        Наші партнери
+      </p>
+      <div class="flex-col gap-sm color-gray">
+        <img alt="img_12" src="img_12.png" style="width: 140px">
+      </div>
+    </div>
+    <div class="flex-col gap-md w-full">
+      <p class="border-bottom pb-md">
+        Безпечні платежі
+      </p>
+      <div class="flex-col gap-sm color-gray">
+        <img alt="img_15" src="img_15.png" style="width: 220px">
+        <p>Всі операції на нашому сайті безпечні і проходять з використанням шифрованого SSL</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
