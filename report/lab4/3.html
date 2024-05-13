@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Лабораторні Роботи</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1 style="font-size: 1.25rem">
+    ЗВІТ З ЛАБОРАТОРНИХ РОБІТ <br>
+    з дисципліни "WEB-ОРІЄНТОВАНІ ТЕХНОЛОГІЇ. ОСНОВИ FRONTEND та BACKEND РОЗРОБКИ" <br>
+    Студент групи ІП-11 <br>
+    Лисенко Андрій Юрійович
+  </h1>
+</header>
+
+<main>
+  <div style="grid-column: span 2">
+    <ul style="display: flex" class="lab-list">
+      <li>
+        <a href="../lab1/1.html">
+          Лабораторна робота 1
+        </a>
+      </li>
+      <li>
+        <a href="../lab2/1.html">
+          Лабораторна робота 2
+        </a>
+      </li>
+      <li>
+        <a href="../lab3/1.html">
+          Лабораторна робота 3
+        </a>
+      </li>
+      <li class="current-lab">
+        <a href="../lab4/1.html">
+          Лабораторна робота 4
+        </a>
+      </li>
+      <li>
+        <a href="../lab5.0/1.html">
+          Лабораторна робота 5.0
+        </a>
+      </li>
+      <li>
+        <a href="../lab5.1/1.html">
+          Лабораторна робота 5.1
+        </a>
+      </li>
+      <li>
+        <a href="../lab6/1.html">
+          Лабораторна робота 6
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <ul class="lab-list">
+      <li>
+        <a href="1.html">
+          Тема, мета, Місце розташування лабораторної роботи №3
+        </a>
+      </li>
+      <li>
+        <a href="2.html">
+          Планшетна верстка
+        </a>
+      </li>
+      <li class="current-lab">
+        <a href="3.html">
+          Мобільна верстка
+        </a>
+      </li>
+      <li>
+        <a href="4.html">
+          Висновки
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="lab-report">
+    <p>
+      Зменшив загальні відступи та проміжки, щоб ефективніше використовувати простір екрану.
+    </p>
+    <p>
+      Зробив поля введення, текстові поля та кнопки на повну ширину екрану, щоб максимізувати зручність користувача.
+    </p>
+    <p>
+      Налаштував зображення так, щоб вони коректно масштабувалися і були реактивними до ширини пристрою.
+    </p>
+    <pre>
+@media (max-width: 768px) {
+  body {
+    gap: 1rem;
+  }
+
+  header, footer {
+    padding: 8px 0;
+  }
+
+  main {
+    padding: 0 10px;
+  }
+
+  .search-container, form {
+    flex-direction: column;
+  }
+
+  .search-container input, .search-container button, input, textarea, button {
+    width: 100%;
+  }
+
+  .items {
+    flex-direction: column;
+  }
+
+  .item {
+    flex-direction: column;
+  }
+
+  .item a {
+    flex-direction: column;
+  }
+
+  table, tbody {
+    display: block;
+    width: 100%;
+  }
+
+  th, td {
+    display: block;
+    width: 100%;
+    padding: 8px;
+  }
+
+  tr {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .item img {
+    width: 100%;
+    height: auto; /* Adjusts the height automatically based on the width */
+  }
+}
+    </pre>
+  </div>
+
+</main>
+</body>
+</html>

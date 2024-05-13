@@ -154,3 +154,86 @@ form > div {
   flex-direction: column;
   gap: 0.75rem;
 }
+
+/* Base CSS included above for reference */
+
+/* Tablet Media Query */
+@media (max-width: 1024px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .lost-and-found, .report-lost-item {
+    width: 100%;
+  }
+
+  .search-container, form {
+    flex-direction: column;
+  }
+
+  .items {
+    flex-direction: column;
+  }
+
+  .item {
+    flex-direction: column;
+  }
+}
+
+/* Mobile Media Query */
+@media (max-width: 768px) {
+  body {
+    gap: 1rem;
+  }
+
+  header, footer {
+    padding: 8px 0;
+  }
+
+  main {
+    padding: 0 10px;
+  }
+
+  .search-container, form {
+    flex-direction: column;
+  }
+
+  .search-container input, .search-container button, input, textarea, button {
+    width: 100%;
+  }
+
+  .items {
+    flex-direction: column;
+  }
+
+  .item {
+    flex-direction: column;
+  }
+
+  .item a {
+    flex-direction: column;
+  }
+
+  table, tbody {
+    display: block;
+    width: 100%;
+  }
+
+  th, td {
+    display: block;
+    width: 100%;
+    padding: 8px;
+  }
+
+  tr {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .item img {
+    width: 100%;
+    height: auto; /* Adjusts the height automatically based on the width */
+  }
+}
