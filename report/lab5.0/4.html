@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Лабораторні Роботи</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1 style="font-size: 1.25rem">
+    ЗВІТ З ЛАБОРАТОРНИХ РОБІТ <br>
+    з дисципліни "WEB-ОРІЄНТОВАНІ ТЕХНОЛОГІЇ. ОСНОВИ FRONTEND та BACKEND РОЗРОБКИ" <br>
+    Студент групи ІП-11 <br>
+    Лисенко Андрій Юрійович
+  </h1>
+</header>
+
+<main>
+  <div style="grid-column: span 2">
+    <ul style="display: flex" class="lab-list">
+      <li>
+        <a href="../lab1/1.html">
+          Лабораторна робота 1
+        </a>
+      </li>
+      <li>
+        <a href="../lab2/1.html">
+          Лабораторна робота 2
+        </a>
+      </li>
+      <li>
+        <a href="../lab3/1.html">
+          Лабораторна робота 3
+        </a>
+      </li>
+      <li>
+        <a href="../lab4/1.html">
+          Лабораторна робота 4
+        </a>
+      </li>
+      <li class="current-lab">
+        <a href="../lab5.0/1.html">
+          Лабораторна робота 5.0
+        </a>
+      </li>
+      <li>
+        <a href="../lab5.1/1.html">
+          Лабораторна робота 5.1
+        </a>
+      </li>
+      <li>
+        <a href="../lab6/1.html">
+          Лабораторна робота 6
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <ul class="lab-list">
+      <li>
+        <a href="1.html">
+          Тема, мета, Місце розташування лабораторної роботи №5
+        </a>
+      </li>
+      <li>
+        <a href="2.html">
+          Завдання (4 пункт)
+        </a>
+      </li>
+      <li>
+        <a href="3.html">
+          Завдання (6 пункт)
+        </a>
+      </li>
+      <li class="current-lab">
+        <a href="4.html">
+          Застосування JS у власному застосунку
+        </a>
+      </li>
+      <li>
+        <a href="5.html">
+          Висновки
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="lab-report">
+    <h2>Застосування JS у власнову застосунку</h2>
+    <p>
+      Я додав JavaScript файл, який завантажує дані про знайдені предмети з файлу `data.json` та відображає їх на
+      сторінці. Скрипт завантажує дані після завантаження сторінки, а потім рендерить кожен предмет у вигляді елементів
+      списку. Кожен елемент включає назву, опис, місце та дату знаходження, а також зображення предмета.
+    </p>
+    <img src="img.png" alt="img">
+    <pre>
+document.addEventListener('DOMContentLoaded', function () {
+  // Fetch data from data.json
+  fetch('data.json')
+    .then(response => response.json())
+    .then(data => {
+      renderItems(data)
+    })
+    .catch(error => console.error('Error fetching data:', error))
+
+  /**
+   * Renders a list of items into the DOM.
+   * @param {Array<
+   *    {name: string, description: string, location: string, date: string, imagePath: string, contacts: string}
+   * >} items - The list of items to render.
+   */
+  function renderItems(items) {
+    const itemsList = document.querySelector('.items')
+    itemsList.innerHTML = '' // Clear the list before adding new items
+
+    items.forEach(item => {
+      const itemElement = document.createElement('li')
+      itemElement.classList.add('item')
+      itemElement.innerHTML = `
+        &lt;h3>${item.name}&lt;/h3>
+        &lt;table>
+          &lt;tr>
+            &lt;th>Description&lt;/th>
+            &lt;td>${item.description}&lt;/td>
+          &lt;/tr>
+          &lt;tr>
+            &lt;th>Location found&lt;/th>
+            &lt;td>${item.location}&lt;/td>
+          &lt;/tr>
+          &lt;tr>
+            &lt;th>Date found&lt;/th>
+            &lt;td>${item.date}&lt;/td>
+          &lt;/tr>
+          &lt;tr>
+            &lt;th>Contact Info&lt;/th>
+            &lt;td>${item.contacts}&lt;/td>
+          &lt;/tr>
+        &lt;/table>
+        &lt;img alt="Item Image" src="${item.imagePath}" width="200" />
+      `
+      itemsList.appendChild(itemElement)
+    })
+  }
+})
+    </pre>
+
+  </div>
+</main>
+</body>
+</html>

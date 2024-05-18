@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Лабораторні Роботи</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1 style="font-size: 1.25rem">
+    ЗВІТ З ЛАБОРАТОРНИХ РОБІТ <br>
+    з дисципліни "WEB-ОРІЄНТОВАНІ ТЕХНОЛОГІЇ. ОСНОВИ FRONTEND та BACKEND РОЗРОБКИ" <br>
+    Студент групи ІП-11 <br>
+    Лисенко Андрій Юрійович
+  </h1>
+</header>
+
+<main>
+  <div style="grid-column: span 2">
+    <ul style="display: flex" class="lab-list">
+      <li>
+        <a href="../lab1/1.html">
+          Лабораторна робота 1
+        </a>
+      </li>
+      <li>
+        <a href="../lab2/1.html">
+          Лабораторна робота 2
+        </a>
+      </li>
+      <li>
+        <a href="../lab3/1.html">
+          Лабораторна робота 3
+        </a>
+      </li>
+      <li>
+        <a href="../lab4/1.html">
+          Лабораторна робота 4
+        </a>
+      </li>
+      <li>
+        <a href="../lab5.0/1.html">
+          Лабораторна робота 5.0
+        </a>
+      </li>
+      <li class="current-lab">
+        <a href="../lab5.1/1.html">
+          Лабораторна робота 5.1
+        </a>
+      </li>
+      <li>
+        <a href="../lab6/1.html">
+          Лабораторна робота 6
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <ul class="lab-list">
+      <li>
+        <a href="1.html">
+          Тема, мета, Місце розташування лабораторної роботи №5
+        </a>
+      </li>
+      <li class="current-lab">
+        <a href="2.html">
+          Завдання 1
+        </a>
+      </li>
+      <li>
+        <a href="3.html">
+          Завдання 3
+        </a>
+      </li>
+      <li>
+        <a href="4.html">
+          Завдання 5
+        </a>
+      </li>
+      <li>
+        <a href="5.html">
+          Завдання 7
+        </a>
+      </li>
+      <li>
+        <a href="6.html">
+          Завдання 9
+        </a>
+      </li>
+      <li>
+        <a href="7.html">
+          Завдання 10
+        </a>
+      </li>
+      <li>
+        <a href="8.html">
+          Висновки
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="lab-report">
+    <p>
+      <button id="createProductButton">Create Product</button>
+    </p>
+    <pre>
+// Function to create a product with a unique id and call the callback with the product
+function createProduct(obj, callback) {
+  // Adding a unique id to the product object
+  obj.id = crypto.randomUUID()
+  // Calling the callback function with the product object
+  callback(obj)
+}
+
+// Callback to log the product
+function logProduct(product) {
+  console.log('Product created:', product)
+}
+
+// Callback to log the total price of the product
+function logTotalPrice(product) {
+  if (product.price && product.quantity) {
+    const totalPrice = product.price * product.quantity
+    console.log('Total price:', totalPrice)
+  } else {
+    console.log('Price or quantity not defined.')
+  }
+}
+
+// Example product object
+const product = {
+  name: 'Sample Product',
+  price: 10,
+  quantity: 3
+}
+
+// Adding event listener to the button
+document.getElementById('createProductButton').addEventListener('click', function () {
+  createProduct(product, function (createdProduct) {
+    logProduct(createdProduct)
+    logTotalPrice(createdProduct)
+  })
+})
+    </pre>
+  </div>
+  <script>
+    // Function to create a product with a unique id and call the callback with the product
+    function createProduct(obj, callback) {
+      // Adding a unique id to the product object
+      obj.id = crypto.randomUUID()
+      // Calling the callback function with the product object
+      callback(obj)
+    }
+
+    // Callback to log the product
+    function logProduct(product) {
+      console.log('Product created:', product)
+    }
+
+    // Callback to log the total price of the product
+    function logTotalPrice(product) {
+      if (product.price && product.quantity) {
+        const totalPrice = product.price * product.quantity
+        console.log('Total price:', totalPrice)
+      } else {
+        console.log('Price or quantity not defined.')
+      }
+    }
+
+    // Example product object
+    const product = {
+      name: 'Sample Product',
+      price: 10,
+      quantity: 3
+    }
+
+    // Adding event listener to the button
+    document.getElementById('createProductButton').addEventListener('click', function () {
+      createProduct(product, function (createdProduct) {
+        logProduct(createdProduct)
+        logTotalPrice(createdProduct)
+      })
+    })
+  </script>
+</main>
+</body>
+</html>

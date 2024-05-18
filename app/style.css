@@ -137,6 +137,12 @@ tr:last-child td {
   border-radius: 0.5rem;
 }
 
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
 .report-lost-item > div {
   display: flex;
   flex-direction: column;

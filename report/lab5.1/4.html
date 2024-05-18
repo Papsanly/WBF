@@ -34,7 +34,7 @@
           Лабораторна робота 3
         </a>
       </li>
-      <li class="current-lab">
+      <li>
         <a href="../lab4/1.html">
           Лабораторна робота 4
         </a>
@@ -44,7 +44,7 @@
           Лабораторна робота 5.0
         </a>
       </li>
-      <li>
+      <li class="current-lab">
         <a href="../lab5.1/1.html">
           Лабораторна робота 5.1
         </a>
@@ -60,21 +60,41 @@
     <ul class="lab-list">
       <li>
         <a href="1.html">
-          Тема, мета, Місце розташування лабораторної роботи №4
+          Тема, мета, Місце розташування лабораторної роботи №5
         </a>
       </li>
       <li>
         <a href="2.html">
-          Планшетна верстка
+          Завдання 1
         </a>
       </li>
       <li>
         <a href="3.html">
-          Мобільна верстка
+          Завдання 3
         </a>
       </li>
       <li class="current-lab">
         <a href="4.html">
+          Завдання 5
+        </a>
+      </li>
+      <li>
+        <a href="5.html">
+          Завдання 7
+        </a>
+      </li>
+      <li>
+        <a href="6.html">
+          Завдання 9
+        </a>
+      </li>
+      <li>
+        <a href="7.html">
+          Завдання 10
+        </a>
+      </li>
+      <li>
+        <a href="8.html">
           Висновки
         </a>
       </li>
@@ -83,13 +103,57 @@
 
   <div class="lab-report">
     <p>
-      я навчився, як правильно створювати сайти, які гарно виглядають та працюють на всіх типах пристроїв. Я дізнався
-      про важливість медіа-запитів для адаптації веб-дизайну під різні розміри екранів, про значення метатегу viewport у
-      контролі відображення контенту на мобільних пристроях, та про підхід Mobile First, який зосереджує увагу спершу на
-      оптимізації сайту для мобільних користувачів.
+      <button onclick="logDiscountedFruits()">Log Discounted Fruits</button>
     </p>
-  </div>
+    <pre>
+function logDiscountedFruits() {
+  const fruits = [
+    { name: "apple", price: 200 },
+    { name: "orange", price: 300 },
+    { name: "grapes", price: 750 },
+  ];
 
+  // Function to apply discount and add unique ID
+  const applyDiscountAndAddId = (fruits) => {
+    return fruits.map((fruit, index) => ({
+      ...fruit,
+      price: fruit.price * 0.8,
+      id: Date.now() + index,
+    }));
+  };
+
+  // Apply the discount and add IDs
+  const discountedFruits = applyDiscountAndAddId(fruits);
+
+  // Log the resulting array
+  console.log(discountedFruits);
+}
+  </pre>
+  </div>
+  <script>
+    function logDiscountedFruits() {
+      const fruits = [
+        {name: 'apple', price: 200},
+        {name: 'orange', price: 300},
+        {name: 'grapes', price: 750},
+      ]
+
+      // Function to apply discount and add unique ID
+      const applyDiscountAndAddId = (fruits) => {
+        return fruits.map((fruit) => ({
+          ...fruit,
+          price: fruit.price * 0.8,
+          id: crypto.randomUUID(),
+        }))
+      }
+
+      // Apply the discount and add IDs
+      const discountedFruits = applyDiscountAndAddId(fruits)
+
+      // Log the resulting array
+      console.log(discountedFruits)
+    }
+  </script>
 </main>
 </body>
 </html>

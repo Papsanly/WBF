@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Лабораторні Роботи</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1 style="font-size: 1.25rem">
+    ЗВІТ З ЛАБОРАТОРНИХ РОБІТ <br>
+    з дисципліни "WEB-ОРІЄНТОВАНІ ТЕХНОЛОГІЇ. ОСНОВИ FRONTEND та BACKEND РОЗРОБКИ" <br>
+    Студент групи ІП-11 <br>
+    Лисенко Андрій Юрійович
+  </h1>
+</header>
+
+<main>
+  <div style="grid-column: span 2">
+    <ul style="display: flex" class="lab-list">
+      <li>
+        <a href="../lab1/1.html">
+          Лабораторна робота 1
+        </a>
+      </li>
+      <li>
+        <a href="../lab2/1.html">
+          Лабораторна робота 2
+        </a>
+      </li>
+      <li>
+        <a href="../lab3/1.html">
+          Лабораторна робота 3
+        </a>
+      </li>
+      <li>
+        <a href="../lab4/1.html">
+          Лабораторна робота 4
+        </a>
+      </li>
+      <li>
+        <a href="../lab5.0/1.html">
+          Лабораторна робота 5.0
+        </a>
+      </li>
+      <li>
+        <a href="../lab5.1/1.html">
+          Лабораторна робота 5.1
+        </a>
+      </li>
+      <li class="current-lab">
+        <a href="../lab6/1.html">
+          Лабораторна робота 6
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <ul class="lab-list">
+      <li>
+        <a href="1.html">
+          Тема, мета, Місце розташування лабораторної роботи №6
+        </a>
+      </li>
+      <li>
+        <a href="2.html">
+          Завдання 1
+        </a>
+      </li>
+      <li>
+        <a href="3.html">
+          Завдання 3
+        </a>
+      </li>
+      <li>
+        <a href="4.html">
+          Завдання 5
+        </a>
+      </li>
+      <li>
+        <a href="5.html">
+          Завдання 7
+        </a>
+      </li>
+      <li>
+        <a href="6.html">
+          Завдання 8
+        </a>
+      </li>
+      <li>
+        <a href="7.html">
+          Завдання 9
+        </a>
+      </li>
+      <li class="current-lab">
+        <a href="8.html">
+          Завдання 10
+        </a>
+      </li>
+      <li>
+        <a href="9.html">
+          Висновки
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="lab-report">
+    <div id="controls">
+      <input type="number" min="1" max="100" step="1" id="inputNumber"/>
+      <button type="button" data-create>Create</button>
+      <button type="button" data-destroy>Destroy</button>
+    </div>
+    <div id="boxes"></div>
+    <pre>
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0')}`;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const input = document.getElementById('inputNumber');
+  const createButton = document.querySelector('button[data-create]');
+  const destroyButton = document.querySelector('button[data-destroy]');
+  const boxesContainer = document.getElementById('boxes');
+
+  function createBoxes(amount) {
+    boxesContainer.innerHTML = '';
+    let size = 30;
+    for (let i = 0; i < amount; i++) {
+      const box = document.createElement('div');
+      box.style.width = `${size}px`;
+      box.style.height = `${size}px`;
+      box.style.backgroundColor = getRandomHexColor();
+      box.style.margin = '5px';
+      boxesContainer.appendChild(box);
+      size += 10;
+    }
+  }
+
+  function destroyBoxes() {
+    boxesContainer.innerHTML = '';
+  }
+
+  createButton.addEventListener('click', () => {
+    const amount = parseInt(input.value);
+    if (amount >= 1 && amount <= 100) {
+      createBoxes(amount);
+      input.value = '';
+    } else {
+      alert('Please enter a number between 1 and 100');
+    }
+  });
+
+  destroyButton.addEventListener('click', destroyBoxes);
+});
+  </pre>
+  </div>
+  <script>
+    function getRandomHexColor() {
+      return `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0')}`
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('inputNumber')
+      const createButton = document.querySelector('button[data-create]')
+      const destroyButton = document.querySelector('button[data-destroy]')
+      const boxesContainer = document.getElementById('boxes')
+
+      function createBoxes(amount) {
+        boxesContainer.innerHTML = ''
+        let size = 30
+        for (let i = 0; i < amount; i++) {
+          const box = document.createElement('div')
+          box.style.width = `${size}px`
+          box.style.height = `${size}px`
+          box.style.backgroundColor = getRandomHexColor()
+          box.style.margin = '5px'
+          boxesContainer.appendChild(box)
+          size += 10
+        }
+      }
+
+      function destroyBoxes() {
+        boxesContainer.innerHTML = ''
+      }
+
+      createButton.addEventListener('click', () => {
+        const amount = parseInt(input.value)
+        if (amount >= 1 && amount <= 100) {
+          createBoxes(amount)
+          input.value = ''
+        } else {
+          alert('Please enter a number between 1 and 100')
+        }
+      })
+
+      destroyButton.addEventListener('click', destroyBoxes)
+    })
+  </script>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Лабораторні Роботи</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1 style="font-size: 1.25rem">
+    ЗВІТ З ЛАБОРАТОРНИХ РОБІТ <br>
+    з дисципліни "WEB-ОРІЄНТОВАНІ ТЕХНОЛОГІЇ. ОСНОВИ FRONTEND та BACKEND РОЗРОБКИ" <br>
+    Студент групи ІП-11 <br>
+    Лисенко Андрій Юрійович
+  </h1>
+</header>
+
+<main>
+  <div style="grid-column: span 2">
+    <ul style="display: flex" class="lab-list">
+      <li>
+        <a href="../lab1/1.html">
+          Лабораторна робота 1
+        </a>
+      </li>
+      <li>
+        <a href="../lab2/1.html">
+          Лабораторна робота 2
+        </a>
+      </li>
+      <li>
+        <a href="../lab3/1.html">
+          Лабораторна робота 3
+        </a>
+      </li>
+      <li>
+        <a href="../lab4/1.html">
+          Лабораторна робота 4
+        </a>
+      </li>
+      <li class="current-lab">
+        <a href="../lab5.0/1.html">
+          Лабораторна робота 5.0
+        </a>
+      </li>
+      <li>
+        <a href="../lab5.1/1.html">
+          Лабораторна робота 5.1
+        </a>
+      </li>
+      <li>
+        <a href="../lab6/1.html">
+          Лабораторна робота 6
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <ul class="lab-list">
+      <li>
+        <a href="1.html">
+          Тема, мета, Місце розташування лабораторної роботи №5
+        </a>
+      </li>
+      <li>
+        <a href="2.html">
+          Завдання (4 пункт)
+        </a>
+      </li>
+      <li class="current-lab">
+        <a href="3.html">
+          Завдання (6 пункт)
+        </a>
+      </li>
+      <li>
+        <a href="4.html">
+          Застосування JS у власному застосунку
+        </a>
+      </li>
+      <li>
+        <a href="5.html">
+          Висновки
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="lab-report">
+    <h1>Підказка при уведенні (Варіант 9)</h1>
+    <div>
+      <label for="textInput">Введіть текст: </label>
+      <div style="position: relative; display: inline-block">
+        <input type="text" id="textInput" oninput="showSuggestions()" autocomplete="off">
+        <div id="suggestions"
+             style="border: 1px solid #ccc; display: none; position: absolute; background-color: white; top: 100%"></div>
+      </div>
+    </div>
+    <div>
+      <h2>Додати нові слова-підказки</h2>
+      <label for="newWordInput">Нове слово: </label>
+      <input type="text" id="newWordInput">
+      <button onclick="addWord()">Додати</button>
+    </div>
+
+    <h2>Список слів-підказок</h2>
+    <ul id="wordList">
+      <li>apple</li>
+      <li>banana</li>
+      <li>cherry</li>
+      <li>date</li>
+      <li>elderberry</li>
+      <li>fig</li>
+      <li>grape</li>
+      <li>honeydew</li>
+    </ul>
+  </div>
+  <script>
+    const textInput = document.getElementById('textInput')
+    const suggestionsDiv = document.getElementById('suggestions')
+    const wordListElement = document.getElementById('wordList')
+    const newWordInput = document.getElementById('newWordInput')
+    let wordListItems = document.querySelectorAll('#wordList li')
+    let wordList = Array.from(wordListItems).map(item => item.textContent)
+
+    function showSuggestions() {
+      const input = textInput.value.toLowerCase()
+      suggestionsDiv.innerHTML = ''
+      if (input) {
+        const filteredWords = wordList.filter(word => word.toLowerCase().startsWith(input))
+        filteredWords.forEach(word => {
+          const suggestionItem = document.createElement('div')
+          suggestionItem.textContent = word
+          suggestionItem.style.padding = '5px'
+          suggestionItem.style.cursor = 'pointer'
+          suggestionItem.onclick = () => selectSuggestion(word)
+          suggestionsDiv.appendChild(suggestionItem)
+        })
+        suggestionsDiv.style.display = filteredWords.length ? 'block' : 'none'
+      } else {
+        suggestionsDiv.style.display = 'none'
+      }
+    }
+
+    function selectSuggestion(word) {
+      textInput.value = word
+      suggestionsDiv.style.display = 'none'
+    }
+
+    function addWord() {
+      const newWord = newWordInput.value.trim()
+      if (newWord && !wordList.includes(newWord)) {
+        wordList.push(newWord)
+        const newWordItem = document.createElement('li')
+        newWordItem.textContent = newWord
+        wordListElement.appendChild(newWordItem)
+        newWordInput.value = ''
+        wordListItems = document.querySelectorAll('#wordList li')
+      }
+    }
+
+    document.addEventListener('click', function (event) {
+      if (event.target !== textInput && event.target !== suggestionsDiv) {
+        suggestionsDiv.style.display = 'none'
+      }
+    })
+  </script>
+</main>
+</body>
+</html>

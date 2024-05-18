@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Лабораторні Роботи</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1 style="font-size: 1.25rem">
+    ЗВІТ З ЛАБОРАТОРНИХ РОБІТ <br>
+    з дисципліни "WEB-ОРІЄНТОВАНІ ТЕХНОЛОГІЇ. ОСНОВИ FRONTEND та BACKEND РОЗРОБКИ" <br>
+    Студент групи ІП-11 <br>
+    Лисенко Андрій Юрійович
+  </h1>
+</header>
+
+<main>
+  <div style="grid-column: span 2">
+    <ul style="display: flex" class="lab-list">
+      <li>
+        <a href="../lab1/1.html">
+          Лабораторна робота 1
+        </a>
+      </li>
+      <li>
+        <a href="../lab2/1.html">
+          Лабораторна робота 2
+        </a>
+      </li>
+      <li>
+        <a href="../lab3/1.html">
+          Лабораторна робота 3
+        </a>
+      </li>
+      <li>
+        <a href="../lab4/1.html">
+          Лабораторна робота 4
+        </a>
+      </li>
+      <li>
+        <a href="../lab5.0/1.html">
+          Лабораторна робота 5.0
+        </a>
+      </li>
+      <li>
+        <a href="../lab5.1/1.html">
+          Лабораторна робота 5.1
+        </a>
+      </li>
+      <li class="current-lab">
+        <a href="../lab6/1.html">
+          Лабораторна робота 6
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <ul class="lab-list">
+      <li>
+        <a href="1.html">
+          Тема, мета, Місце розташування лабораторної роботи №6
+        </a>
+      </li>
+      <li>
+        <a href="2.html">
+          Завдання 1
+        </a>
+      </li>
+      <li>
+        <a href="3.html">
+          Завдання 3
+        </a>
+      </li>
+      <li>
+        <a href="4.html">
+          Завдання 5
+        </a>
+      </li>
+      <li>
+        <a href="5.html">
+          Завдання 7
+        </a>
+      </li>
+      <li class="current-lab">
+        <a href="6.html">
+          Завдання 8
+        </a>
+      </li>
+      <li>
+        <a href="7.html">
+          Завдання 9
+        </a>
+      </li>
+      <li>
+        <a href="8.html">
+          Завдання 10
+        </a>
+      </li>
+      <li>
+        <a href="9.html">
+          Висновки
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="lab-report">
+    <form class="login-form">
+      <label>
+        Email
+        <input type="email" name="email"/>
+      </label>
+      <label>
+        Password
+        <input type="password" name="password"/>
+      </label>
+      <button type="submit">Log in</button>
+    </form>
+    <pre>
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector('.login-form');
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const email = form.elements.email.value.trim();
+    const password = form.elements.password.value.trim();
+
+    if (!email || !password) {
+      alert('All form fields must be filled in');
+      return;
+    }
+
+    const formData = {
+      email,
+      password,
+    };
+
+    console.log(formData);
+    form.reset();
+  });
+});
+  </pre>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.querySelector('.login-form')
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault()
+
+        const email = form.elements.email.value.trim()
+        const password = form.elements.password.value.trim()
+
+        if (!email || !password) {
+          alert('All form fields must be filled in')
+          return
+        }
+
+        const formData = {
+          email,
+          password,
+        }
+
+        console.log(formData)
+        form.reset()
+      })
+    })
+  </script>
+
+</main>
+</body>
+</html>
