@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Лабораторні Роботи</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1 style="font-size: 1.25rem">
+    ЗВІТ З ЛАБОРАТОРНИХ РОБІТ <br>
+    з дисципліни "WEB-ОРІЄНТОВАНІ ТЕХНОЛОГІЇ. ОСНОВИ FRONTEND та BACKEND РОЗРОБКИ" <br>
+    Студент групи ІП-11 <br>
+    Лисенко Андрій Юрійович
+  </h1>
+</header>
+
+<main>
+  <div style="grid-column: span 2">
+    <ul style="display: flex" class="lab-list">
+      <li>
+        <a href="../lab1/1.html">
+          Лабораторна робота 1
+        </a>
+      </li>
+      <li>
+        <a href="../lab2/1.html">
+          Лабораторна робота 2
+        </a>
+      </li>
+      <li>
+        <a href="../lab3/1.html">
+          Лабораторна робота 3
+        </a>
+      </li>
+      <li>
+        <a href="../lab4/1.html">
+          Лабораторна робота 4
+        </a>
+      </li>
+      <li>
+        <a href="../lab5.0/1.html">
+          Лабораторна робота 5.0
+        </a>
+      </li>
+      <li>
+        <a href="../lab5.1/1.html">
+          Лабораторна робота 5.1
+        </a>
+      </li>
+      <li>
+        <a href="../lab6/1.html">
+          Лабораторна робота 6
+        </a>
+      </li>
+      <li class="current-lab">
+        <a href="../lab7/1.html">
+          Лабораторна робота 7
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <ul class="lab-list">
+      <li>
+        <a href="1.html">
+          Тема, мета, Місце розташування лабораторної роботи №6
+        </a>
+      </li>
+      <li>
+        <a href="2.html">
+          Завдання 1
+        </a>
+      </li>
+      <li class="current-lab">
+        <a href="3.html">
+          Завдання 2
+        </a>
+      </li>
+      <li>
+        <a href="4.html">
+          Висновки
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="lab-report">
+    <img alt="img_2" src="img_2.png">
+    <h2>JS-код</h2>
+    <pre>
+const formData = {email: '', message: ''}
+const form = document.querySelector('.feedback-form')
+const emailInput = form.elements.email
+const messageTextarea = form.elements.message
+const LOCAL_STORAGE_KEY = 'feedback-form-state'
+
+// Завантаження даних з локального сховища при завантаженні сторінки
+document.addEventListener('DOMContentLoaded', () => {
+  const savedData = localStorage.getItem(LOCAL_STORAGE_KEY)
+  if (savedData) {
+    const parsedData = JSON.parse(savedData)
+    formData.email = parsedData.email || ''
+    formData.message = parsedData.message || ''
+    emailInput.value = formData.email
+    messageTextarea.value = formData.message
+  }
+})
+
+// Відстеження змін у формі та збереження даних у локальне сховище
+form.addEventListener('input', event => {
+  formData[event.target.name] = event.target.value.trim()
+  localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(formData))
+})
+
+// Обробка події сабміту форми
+form.addEventListener('submit', event => {
+  event.preventDefault()
+  if (!formData.email || !formData.message) {
+    alert('Fill please all fields')
+    return
+  }
+  console.log(formData)
+  localStorage.removeItem(LOCAL_STORAGE_KEY)
+  formData.email = ''
+  formData.message = ''
+  form.reset()
+})
+    </pre>
+    <h2>CSS-код</h2>
+    <pre>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.feedback-form {
+  display: flex;
+  min-width: 300px;
+  flex-direction: column;
+  gap: 10px;
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.feedback-form button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #5cb85c;
+  color: white;
+  cursor: pointer;
+}
+
+.feedback-form button:hover {
+  background-color: #4cae4c;
+}
+    </pre>
+    <h2>HTML-код</h2>
+    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Feedback Form&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;2-form.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;form class=&quot;feedback-form&quot; autocomplete=&quot;off&quot;&gt;
+  &lt;label&gt;
+    Email
+    &lt;input type=&quot;email&quot; name=&quot;email&quot; autofocus/&gt;
+  &lt;/label&gt;
+  &lt;label&gt;
+    Message
+    &lt;textarea name=&quot;message&quot; rows=&quot;8&quot;&gt;&lt;/textarea&gt;
+  &lt;/label&gt;
+  &lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+&lt;script src=&quot;2-form.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+  </div>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Лабораторні Роботи</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1 style="font-size: 1.25rem">
+    ЗВІТ З ЛАБОРАТОРНИХ РОБІТ <br>
+    з дисципліни "WEB-ОРІЄНТОВАНІ ТЕХНОЛОГІЇ. ОСНОВИ FRONTEND та BACKEND РОЗРОБКИ" <br>
+    Студент групи ІП-11 <br>
+    Лисенко Андрій Юрійович
+  </h1>
+</header>
+
+<main>
+  <div style="grid-column: span 2">
+    <ul style="display: flex" class="lab-list">
+      <li>
+        <a href="../lab1/1.html">
+          Лабораторна робота 1
+        </a>
+      </li>
+      <li>
+        <a href="../lab2/1.html">
+          Лабораторна робота 2
+        </a>
+      </li>
+      <li>
+        <a href="../lab3/1.html">
+          Лабораторна робота 3
+        </a>
+      </li>
+      <li>
+        <a href="../lab4/1.html">
+          Лабораторна робота 4
+        </a>
+      </li>
+      <li>
+        <a href="../lab5.0/1.html">
+          Лабораторна робота 5.0
+        </a>
+      </li>
+      <li>
+        <a href="../lab5.1/1.html">
+          Лабораторна робота 5.1
+        </a>
+      </li>
+      <li>
+        <a href="../lab6/1.html">
+          Лабораторна робота 6
+        </a>
+      </li>
+      <li class="current-lab">
+        <a href="../lab7/1.html">
+          Лабораторна робота 7
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <ul class="lab-list">
+      <li>
+        <a href="1.html">
+          Тема, мета, Місце розташування лабораторної роботи №6
+        </a>
+      </li>
+      <li class="current-lab">
+        <a href="2.html">
+          Завдання 1
+        </a>
+      </li>
+      <li>
+        <a href="3.html">
+          Завдання 2
+        </a>
+      </li>
+      <li>
+        <a href="4.html">
+          Висновки
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="lab-report">
+    <img alt="img" src="img.png">
+    <img alt="img_1" src="img_1.png">
+    <h2>JS-код</h2>
+    <pre>
+const images = [
+  {
+    preview: 'img/3f96a942-0ea9-4469-bd6a-836c691bf31f_preview.webp',
+    original: 'img/3f96a942-0ea9-4469-bd6a-836c691bf31f.webp',
+    description: 'Image 1',
+  },
+  {
+    preview: 'img/3482ac4a-1c45-465b-8d52-5e55d1af2ee7_preview.webp',
+    original: 'img/3482ac4a-1c45-465b-8d52-5e55d1af2ee7.webp',
+    description: 'Image 2',
+  },
+  {
+    preview: 'img/a0a24dce-1a41-4ed7-bdbd-41440732ad67_preview.webp',
+    original: 'img/a0a24dce-1a41-4ed7-bdbd-41440732ad67.webp',
+    description: 'Image 3',
+  },
+  {
+    preview: 'img/aec61a60-29b2-4664-a8f1-c9384f3a46fc_preview.webp',
+    original: 'img/aec61a60-29b2-4664-a8f1-c9384f3a46fc.webp',
+    description: 'Image 4',
+  },
+  {
+    preview: 'img/b9d472a1-c078-4cf7-b4fd-9517ba4fc4df_preview.webp',
+    original: 'img/b9d472a1-c078-4cf7-b4fd-9517ba4fc4df.webp',
+    description: 'Image 5',
+  },
+  {
+    preview: 'img/c9a36c1d-df10-4f2c-af15-4e26637bde2f_preview.webp',
+    original: 'img/c9a36c1d-df10-4f2c-af15-4e26637bde2f.webp',
+    description: 'Image 6',
+  },
+  {
+    preview: 'img/cf9334cd-9506-469b-81d1-790b9341d97a_preview.webp',
+    original: 'img/cf9334cd-9506-469b-81d1-790b9341d97a.webp',
+    description: 'Image 7',
+  },
+]
+const galleryContainer = document.querySelector('.gallery')
+
+const galleryItemsMarkup = images.map(({preview, original, description}) => {
+  return `
+    &lt;li>
+      &lt;img src="${preview}" data-source="${original}" alt="${description}">
+    &lt;/li>
+  `
+}).join('')
+
+galleryContainer.innerHTML = galleryItemsMarkup
+
+galleryContainer.addEventListener('click', event => {
+  event.preventDefault()
+  if (event.target.nodeName !== 'IMG') return
+
+  const originalImageURL = event.target.dataset.source
+  const instance = basicLightbox.create(`&lt;img src="${originalImageURL}" alt="${event.target.alt}">`)
+  instance.show()
+})
+
+    </pre>
+    <h2>CSS-код</h2>
+    <pre>
+body {
+  font-family: Arial, sans-serif;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+}
+
+.gallery li {
+  margin: 10px;
+}
+
+.gallery img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  cursor: pointer;
+}
+    </pre>
+    <h2>HTML-код</h2>
+    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Image Gallery&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1 style=&quot;text-align: center&quot;&gt;Ai generated spaceships gallery&lt;/h1&gt;
+&lt;ul class=&quot;gallery&quot;&gt;&lt;/ul&gt;
+&lt;script src=&quot;js/data.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/gallery.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+  </pre>
+  </div>
+</main>
+</body>
+</html>
