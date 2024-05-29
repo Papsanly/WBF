@@ -124,6 +124,60 @@
       <li>grape</li>
       <li>honeydew</li>
     </ul>
+
+    <div>
+      <h2>JS-код</h2>
+      <pre>
+    const textInput = document.getElementById('textInput')
+    const suggestionsDiv = document.getElementById('suggestions')
+    const wordListElement = document.getElementById('wordList')
+    const newWordInput = document.getElementById('newWordInput')
+    let wordListItems = document.querySelectorAll('#wordList li')
+    let wordList = Array.from(wordListItems).map(item => item.textContent)
+
+    function showSuggestions() {
+      const input = textInput.value.toLowerCase()
+      suggestionsDiv.innerHTML = ''
+      if (input) {
+        const filteredWords = wordList.filter(word => word.toLowerCase().startsWith(input))
+        filteredWords.forEach(word => {
+          const suggestionItem = document.createElement('div')
+          suggestionItem.textContent = word
+          suggestionItem.style.padding = '5px'
+          suggestionItem.style.cursor = 'pointer'
+          suggestionItem.onclick = () => selectSuggestion(word)
+          suggestionsDiv.appendChild(suggestionItem)
+        })
+        suggestionsDiv.style.display = filteredWords.length ? 'block' : 'none'
+      } else {
+        suggestionsDiv.style.display = 'none'
+      }
+    }
+
+    function selectSuggestion(word) {
+      textInput.value = word
+      suggestionsDiv.style.display = 'none'
+    }
+
+    function addWord() {
+      const newWord = newWordInput.value.trim()
+      if (newWord && !wordList.includes(newWord)) {
+        wordList.push(newWord)
+        const newWordItem = document.createElement('li')
+        newWordItem.textContent = newWord
+        wordListElement.appendChild(newWordItem)
+        newWordInput.value = ''
+        wordListItems = document.querySelectorAll('#wordList li')
+      }
+    }
+
+    document.addEventListener('click', function (event) {
+      if (event.target !== textInput && event.target !== suggestionsDiv) {
+        suggestionsDiv.style.display = 'none'
+      }
+    })
+      </pre>
+    </div>
   </div>
   <script>
     const textInput = document.getElementById('textInput')
